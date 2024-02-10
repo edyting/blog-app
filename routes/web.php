@@ -1,6 +1,11 @@
 <?php
 
+use App\Http\Controllers\CreateController;
+use App\Http\Controllers\EditblogController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\ProfileController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +18,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/homepage', function () {
     return view('welcome');
 });
+
+Route::get('/register',[RegisterController::class, 'register']);
+
+Route::get('/profile',[ProfileController::class,'profile']);
+
+Route::get('/edit',[EditblogController::class,'edit']);
+
+Route::get('/create',[CreateController::class,'create']);
+
