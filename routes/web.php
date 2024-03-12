@@ -1,10 +1,9 @@
 <?php
 
-use App\Http\Controllers\CreateController;
-use App\Http\Controllers\EditblogController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\FeedsController;
+use App\Http\Controllers\PagesController;
+
 
 
 /*
@@ -18,15 +17,17 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/homepage', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register',[RegisterController::class, 'register']);
+Route::get('/register',[PagesController::class, 'register']);
 
-Route::get('/profile',[ProfileController::class,'profile']);
+Route::get('/profile',[PagesController::class,'profile']);
 
-Route::get('/edit',[EditblogController::class,'edit']);
+Route::get('/edit',[PagesController::class,'edit']);
 
-Route::get('/create',[CreateController::class,'create']);
+Route::get('/create',[PagesController::class,'create']);
+
+Route::get('/feeds',[PagesController::class,'feeds']);
 
